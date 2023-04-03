@@ -8,8 +8,8 @@ function Slider() {
             <div className='slider-element'>
                 <p className='slider-p medium'>Van aki beéri egy szelettel, de te ne legyél olyan, mint a többség.</p>
                 <h1 className='black'>Vidd az egész tortát!</h1>
+                <button className='button slider-button medium'>Marketing Outsourcing</button>
             </div>
-            <button className='button slider-button medium'>Marketing Outsourcing</button>
             <img className='slider' src={slider1} alt='slider-1'/>
         </div>
     </React.Fragment>

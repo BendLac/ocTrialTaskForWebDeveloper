@@ -26,8 +26,6 @@
 
 .slider-button{
   position: absolute;
-  left: 10%;
-  bottom: 20%;
   background-color: #ed1848;
   color: white;
 }
@@ -48,7 +46,7 @@
   position: absolute;
   color: white;
   left: 10%;
-  bottom: 30%;
+  top: 40%;
 }
 
 .slider-p {
