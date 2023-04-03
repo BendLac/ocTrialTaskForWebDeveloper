@@ -1,15 +1,104 @@
+.regular {
+	/* Montserrat Regular = 400 */
+	font-weight: 400;
+}
+
+.medium {
+	/* Montserrat Medium = 500 */
+	font-weight: 500;
+}
+
+.black {
+	/* Montserrat Black = 900 */
+	font-weight: 900;
+}
+
+
 .App {
-  text-align: center;
+  font-family: Montserrat, "Open Sans", sans-serif;
   background: linear-gradient(to right, #283b8f, #1868b0, #283b8f);
 }
 
+.button {
+  border-radius: 0 0 20px 0;
+  padding: 10px 15px 10px 15px;
+}
+
+.slider-button{
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  background-color: #ed1848;
+  color: white;
+}
+
+.slider-container{
+  padding-top: 80px;
+}
+
 .slider {
+  text-align: center;
   width: 100%;
   height: 600px;
   object-fit: cover;
+  color: white;
 }
 
+.slider-element {
+  position: absolute;
+  color: white;
+  left: 10%;
+  bottom: 30%;
+}
+
+.slider-p {
+  inline-size: 250px;
+  overflow-wrap: break-word;
+}
+
+.about-container {
+  background-color: white;
+}
+
+.services-container {
+  color: white;
+}
+
+.our-work-container {
+  background-color: white;
+}
+
+.partners-container {
+  color: white;
+}
+
+.awards-container {
+  background-color: white;
+}
+
+
 .footer-container {
-  display: inline;
-  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-left {
+  padding: 20px;
+}
+
+.footer-right {
+  padding-left: 120px;
+}
+
+.footer-bottom {
+  position: relative;
+  display: flex;
+  left: 20px;
+}
+
+.footer-bottom-element {
+  color: white;
+  padding-left: 10px;
 }
