@@ -19,44 +19,127 @@
   background: linear-gradient(to right, #283b8f, #1868b0, #283b8f);
 }
 
+
+/* BUTTONS */
 .button {
+  padding: 10px 15px 10px 15px;
+}
+.button-rounded {
   border-radius: 0 0 20px 0;
   padding: 10px 15px 10px 15px;
 }
+.blue-button {
+  font-weight: bold;
+  color: #23509d;
+  border: 3px solid;
+  border-color: #23509d;
+  background-color: white;
+}
 
+
+/* SLIDER */
 .slider-button{
-  position: absolute;
+  display: flex;
   background-color: #ed1848;
   color: white;
+  border: none;
 }
-
 .slider-container{
-  padding-top: 80px;
-}
-
-.slider {
-  text-align: center;
+  margin-top: 80px;
   width: 100%;
-  height: 600px;
+  background-image: url('./resources/slider-1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 800px;
+}
+.slider {
+  padding-top: 30px;
+  width: 100%;
+  height: 800px;
   object-fit: cover;
   color: white;
 }
-
 .slider-element {
-  position: absolute;
-  color: white;
-  left: 10%;
+  position: relative;
   top: 40%;
+  left: 15%;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-
 .slider-p {
   inline-size: 250px;
   overflow-wrap: break-word;
 }
 
-.about-container {
+
+
+/* ABOUT */
+/* .oc-emblem img{
+  position: fixed;
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+} */
+.about {
+  padding-top: 200px;
   background-color: white;
 }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+.OCColorfulEmblem {
+  transform: translate(-90px, 20px);
+}
+.about-text-container {
+  display: flex;
+  top: 30%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.about-text-container h1{
+  background: -webkit-linear-gradient(#1868b0, #283b8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-button-container button:last-of-type{
+  margin-left: 40px;
+}
+
+.active.fade-right {
+  animation: fade-right 1.5s ease-in;
+}
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+.reveal.active {
+  opacity: 1;
+}
+
+
+
 
 .services-container {
   color: white;
@@ -75,6 +158,7 @@
 }
 
 
+/* FOOTER */
 .footer-container {
   margin-top: 30px;
   margin-bottom: 30px;
