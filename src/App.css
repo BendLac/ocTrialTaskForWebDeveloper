@@ -52,10 +52,11 @@
 }
 .slider-container{
   /* display: none; */
+  position: relative;
   width: 100%;
   height: 650px;
   transform: translate(0, -80px);
-  z-index: 10;
+  z-index: 2;
 }
 .slider-element {
   position: relative;
@@ -64,7 +65,7 @@
   color: white;
   flex-direction: column;
   flex-wrap: wrap;
-  z-index: 10;
+  z-index: 3;
 }
 .slider-button{
   display: flex;
@@ -100,9 +101,9 @@
 /* ABOUT */
 .oc-emblem-container img{
   position: absolute;
-  z-index: 1;
   display: block;
   opacity: 1;
+  z-index: 1;
 }
 @keyframes fadeOutEmblem{
   100% { opacity: 1; }
@@ -180,17 +181,20 @@
   color: white;
   height: 600px;
 }
-/* .services-upper-container {
-  width: 100%;
-  height: 370px;
-  background: linear-gradient(to bottom, #283b8f, #1868b0);
-  transform: translate(0, -60px);
-} */
+.services-icons{
+  width: 10%;
+  position: relative;
+  display: flex;
+}
+.services-icon-active {
+  /* filter: brightness(100%) grayscale(100%); */
+  fill: white !important;
+}
 .services-dynamic{
   width: 100%;
   background:rgba(35, 41, 94, 0.21); /*rgba(35, 41, 94, 0.21) = #23295e 21% op.*/
   transform: translate(0, 120px);
-  height: 300px;
+  height: 230px;
   flex-direction: column;
   flex-wrap: wrap;
 }
@@ -234,12 +238,127 @@
   background-color: white;
 }
 
+
+
+/* PARTNERS */
 .partners-container {
+  margin-top: 100px;
   color: white;
+  margin-bottom: 100px;
+}
+.partners-text-container {
+  margin: 0 auto;
+  text-align: center;
+  inline-size: 600px;
+  overflow-wrap: break-word;
+}
+.partners-button {
+  margin: 0 auto;
+  display: block;
+  background-color: #ed1848;
+  color: white;
+  border: none;
+}
+.partners-container img {
+  filter: brightness(0%) saturate(100%) invert(1) grayscale(1);
+}
+/* .partners-images img:nth-of-type(1),
+.partners-images img:nth-of-type(2),
+.partners-images img:nth-of-type(3),
+.partners-images img:nth-of-type(4){
+  margin-left: 60px;
+} */
+:root {
+  --gap: 10px;
+  --duration: 10s;
+  --scroll-start: 100%;
+  --scroll-end: calc(-90% - var(--gap));
+}
+.partners-images {
+  gap: var(--gap);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  justify-content: space-around;
+  min-width: 100%;
+  animation: scroll-left var(--duration) linear infinite;
+  max-width: 300vw;
+  max-height: 200px;
+}
+.partners-slider{
+  display: flex;
+}
+.partners-slider-item {
+  height: 150px;
+  width: 250px;
+}
+@keyframes scroll-left {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
 }
 
+.ferrari{
+  width: 50%;
+}
+.lambo {
+  width: 80%;
+}
+.jack {
+  width: 60%;
+}
+.toyota {
+  width: 45%;
+}
+
+
+
+/* AWARDS */
 .awards-container {
   background-color: white;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+.awards-emblem{
+  position: relative;
+  display: flex;
+
+}
+.awards-emblem1{
+  position: absolute;
+  top: -6rem;
+  left: -4rem;
+  animation: AwardEmblemRotation 8s infinite linear;
+} 
+.awards-emblem2{
+  position: relative;
+  top: -21rem;
+  left: -20rem;
+  animation: AwardEmblemRotation 8s infinite linear;
+}
+.awards-emblem3 {
+  position: absolute;
+  right: 10rem;
+  animation: AwardEmblemRotation 8s infinite linear;
+}
+@keyframes AwardEmblemRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.flextime {
+  position: relative;
+  top: -3rem;
+  left: -17rem;
+  z-index: 2;
 }
 
 
