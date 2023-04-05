@@ -1,11 +1,96 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import OCColorfulEmblem from '../resources/oc-colorful-emblem.png'
+import $ from 'jquery';
 
 import Emblem1 from '../resources/oc-emblem-part-1.png'
 import Emblem2 from '../resources/oc-emblem-part-2.png'
 import Emblem3 from '../resources/oc-emblem-part-3.png'
 
 function About() {
+  // useEffect(() => {
+  //   function handleScrollEmblem() {
+  //     const images = document.querySelectorAll('.oc-emblem');
+  //     const emblem1 = document.getElementsByClassName('emblem1');
+  //     const emblem2 = document.getElementsByClassName('emblem2');
+  //     const emblem3 = document.getElementsByClassName('emblem3');
+  //   const scrollYPosition = window.scrollY;
+  //   const rotation1 = `rotate(${scrollYPosition / 2.5}deg)`;
+  //   const rotation3 = `rotate(${scrollYPosition / 1}deg)`;
+  //   for (let i = 0; i < emblem1.length; i++) {
+  //     emblem1[i].style.transform = rotation1;
+  //   }
+  //   for (let i = 0; i < emblem3.length; i++) {
+  //     emblem3[i].style.transform = rotation3;
+  //   }
+  //   if(rotation3.includes('rotate(360deg)')) {
+  //     document.querySelectorAll('.oc-emblem').forEach(emblem => {
+  //       emblem.style.animation = 'fadeOuteOcEmblemContainer';
+  //       emblem.style.opacity = 0;
+  //     });
+  //     document.getElementById('OCColorfulEmblem').style.animation = 'fadeInEmblem 2s';
+  //     document.getElementById('OCColorfulEmblem').style.opacity = '1';
+  //   }
+  //   if(rotation3.includes('rotate(374deg)')) {
+  //     document.getElementsByClassName('emblem3');
+  //   }
+
+  //   }
+  //   window.addEventListener('scroll', handleScrollEmblem);
+  //   return () => window.removeEventListener('scroll', handleScrollEmblem);
+  // }, []);
+
+  $(window).scroll(function() {
+  let scrollTop = $(window).scrollTop();
+  console.log("scrollTop>>>" + scrollTop);
+
+  // The emblem part 1 scroll and positioning
+  if (scrollTop >= 1000) {
+    $(".emblem1").fadeOut();
+    $(".emblem2").fadeOut();
+    $(".emblem3").fadeOut();
+    $(".emblem1").css({"margin-top": "1010px"}); 
+    $(".emblem1").css({"transform": "rotate(0deg)"});
+    $("#OCColorfulEmblem").css({"animation": "fadeInEmblem 0.5s ease-out"}); 
+    $("#OCColorfulEmblem").css({"opacity": "1"}); 
+  } else if (scrollTop === 0) {
+    $("#OCColorfulEmblem").css({"opacity": "0"});
+    $(".emblem1").fadeIn();
+    $(".emblem2").fadeIn();
+    $(".emblem3").fadeIn();       
+    $(".emblem1").css({"margin-top": "0px"});
+  } else {
+    $("#OCColorfulEmblem").css({"opacity": "0"}); 
+    $(".emblem1").fadeIn();
+    $(".emblem2").fadeIn();  
+    $(".emblem3").fadeIn();      
+    $(".emblem1").css({"transform": "rotate(" + (0 + scrollTop / 2.78) + "deg)"});   
+    $(".emblem1").css({"margin-top": ($(window).scrollTop()) + "px"}); 
+   }
+   //The emblem part 2
+   if (scrollTop >= 770) {
+    $(".emblem2").css({"margin-top": "770px"}); 
+    $(".emblem2").css({"transform": "rotate(0deg)"}); 
+  } else if (scrollTop === 0) {
+    $(".emblem2").css({"margin-top": "0px"});    
+  } else {
+    $(".emblem2").css({"transform": "rotate(" + (0 + scrollTop / 2.5) + "deg)"});   
+    $(".emblem2").css({"margin-top": ($(window).scrollTop()) + "px"});    
+   }
+   //The emblem part 3
+   if (scrollTop >= 550) {
+    $(".emblem3").css({"margin-top": "558px"}); 
+    $(".emblem3").css({"transform": "rotate(0deg)"}); 
+  } else if (scrollTop === 0) {
+    $(".emblem3").fadeIn(); 
+    $(".emblem3").css({"margin-top": "0px"});    
+  } else {
+    $(".emblem3").css({"transform": "rotate(" + (0 + scrollTop / 1.5) + "deg)"});   
+    $(".emblem3").css({"margin-top": ($(window).scrollTop()) + "px"});    
+   }
+});
+
+
+  /* Text box fading */
   window.addEventListener(
     "scroll",
     () => {
@@ -16,10 +101,8 @@ function About() {
     },
     false
   );
-
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
-  
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
@@ -32,7 +115,6 @@ function About() {
       }
     }
   }
-  
   window.addEventListener("scroll", reveal);
   
 
@@ -40,11 +122,13 @@ function About() {
     <React.Fragment>
       <div className='about'>
         <div className='about-container'>
-          {/* <img classname='oc-emblem' src={Emblem1} alt='emblem1'/>
-          <img classname='oc-emblem' src={Emblem2} alt='emblem2'/>
-          <img classname='oc-emblem' src={Emblem3} alt='emblem3'/> */}
+          <div className='oc-emblem-container'>
+            <img className='oc-emblem emblem3' src={Emblem3} alt='emblem3'/>
+            <img className='oc-emblem emblem2' src={Emblem2} alt='emblem2'/>
+            <img className='oc-emblem emblem1' src={Emblem1} alt='emblem1'/>
+          </div>
           <div className='about-grid'>
-            <img className='OCColorfulEmblem' src={OCColorfulEmblem} alt='OCColorfulEmblem'/>  
+            <img id='OCColorfulEmblem' src={OCColorfulEmblem} alt='OCColorfulEmblem'/>  
             <div className='about-text-container reveal fade-right'>
               <p className='medium'>#Certified member of Hungarian Marketing Association?!</p>
               <h1 className='about-text black'>Ezek vagyunk mi</h1>
