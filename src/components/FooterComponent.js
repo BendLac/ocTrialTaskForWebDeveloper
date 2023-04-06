@@ -19,11 +19,21 @@ function Footer() {
         <a target="_blank" rel="noreferrer" href='https://www.google.com/maps/place/OUTCLASS/@46.2516072,20.1416623,17z/data=!3m1!4b1!4m6!3m5!1s0x474487ed9265d321:0x9cab3eb4383e359d!8m2!3d46.2516072!4d20.143851!16s%2Fg%2F11h5q59qsq'>
           <img className='footer-left' src={Place} alt='footer-place'/>
         </a>
-        <a target="_blank" rel="noreferrer" href='https://www.facebook.com/ovtclass' ><img className='footer-left' src={Facebook} alt='footer-facebook'/></a>
-        <a target="_blank" rel="noreferrer" href='https://www.instagram.com/ovtclass/'><img className='footer-left' src={Instagram} alt='footer-instagram'/></a>
-        <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/ovtclass/'><img className='footer-left' src={Linkedin} alt='footer-linkedin'/></a>
-        <a target="_blank" rel="noreferrer" href='https://www.hsagroup.hu/'><img className='footer-right' src={HSAGroup} alt='hsagroup-member-logo'/></a>
-        <a target="_blank" rel="noreferrer" href='https://www.marketing.hu/'><img className='footer-right' src={Certified} alt='certified-member-footer-logo'/></a>
+        <a target="_blank" rel="noreferrer" href='https://www.facebook.com/ovtclass' >
+          <img className='footer-left' src={Facebook} alt='footer-facebook'/>
+        </a>
+        <a target="_blank" rel="noreferrer" href='https://www.instagram.com/ovtclass/'>
+          <img className='footer-left' src={Instagram} alt='footer-instagram'/>
+        </a>
+        <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/ovtclass/'>
+          <img className='footer-left' src={Linkedin} alt='footer-linkedin'/>
+        </a>
+        <a target="_blank" rel="noreferrer" href='https://www.hsagroup.hu/'>
+          <img className='footer-right' src={HSAGroup} alt='hsagroup-member-logo'/>
+        </a>
+        <a target="_blank" rel="noreferrer" href='https://www.marketing.hu/'>
+          <img className='footer-right' src={Certified} alt='certified-member-footer-logo'/>
+        </a>
         <div className='footer-bottom'>
           <img className='footer-bottom-element' src={Copyright} alt='copyright'  width='40' height='30'/>
           <b className='footer-bottom-element'>2022 OUTCLASS Kft.</b>

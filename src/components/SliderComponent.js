@@ -15,7 +15,7 @@ function Slider() {
               <h1 className='black'>Vidd az egész tortát!</h1>
               <button className='button-rounded slider-button medium'>Marketing Outsourcing</button>
             </div>
-            <img className='slider' src={slider1} alt='slider-1'/>
+            {/* <img className='slider' src={slider1} alt='slider-1'/> */}
         </div>
         {/* <div className='slider-container slider-fade'>
             <div className='slider-element'>

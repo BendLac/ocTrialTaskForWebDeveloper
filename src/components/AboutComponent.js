@@ -12,11 +12,11 @@ function About() {
     let scrollTop = $(window).scrollTop();
 
     // The emblem part 1 scroll and positioning, fading
-    if (scrollTop >= 1000) {
+    if (scrollTop >= 1080) {
       $(".emblem1").fadeOut();
       $(".emblem2").fadeOut();
       $(".emblem3").fadeOut();
-      $(".emblem1").css({"margin-top": "1010px"}); 
+      $(".emblem1").css({"margin-top": "1088px"}); 
       $(".emblem1").css({"transform": "rotate(0deg)"});
       $("#OCColorfulEmblem").css({"animation": "fadeInEmblem 0.5s ease-out"}); 
       $("#OCColorfulEmblem").css({"opacity": "1"}); 
@@ -31,12 +31,12 @@ function About() {
       $(".emblem1").fadeIn();
       $(".emblem2").fadeIn();  
       $(".emblem3").fadeIn();      
-      $(".emblem1").css({"transform": "rotate(" + (0 + scrollTop / 2.78) + "deg)"});   
+      $(".emblem1").css({"transform": "rotate(" + (0 + scrollTop / 2.98) + "deg)"});   
       $(".emblem1").css({"margin-top": ($(window).scrollTop()) + "px"}); 
     }
     //The emblem part 2
-    if (scrollTop >= 770) {
-      $(".emblem2").css({"margin-top": "770px"}); 
+    if (scrollTop >= 847) {
+      $(".emblem2").css({"margin-top": "847px"}); 
       $(".emblem2").css({"transform": "rotate(0deg)"}); 
     } else if (scrollTop === 0) {
       $(".emblem2").css({"margin-top": "0px"});    
@@ -45,14 +45,14 @@ function About() {
       $(".emblem2").css({"margin-top": ($(window).scrollTop()) + "px"});    
     }
     //The emblem part 3
-    if (scrollTop >= 550) {
-      $(".emblem3").css({"margin-top": "558px"}); 
+    if (scrollTop >= 632) {
+      $(".emblem3").css({"margin-top": "632px"}); 
       $(".emblem3").css({"transform": "rotate(0deg)"}); 
     } else if (scrollTop === 0) {
       $(".emblem3").fadeIn(); 
       $(".emblem3").css({"margin-top": "0px"});    
     } else {
-      $(".emblem3").css({"transform": "rotate(" + (0 + scrollTop / 1.5) + "deg)"});   
+      $(".emblem3").css({"transform": "rotate(" + (0 + scrollTop / 1.8) + "deg)"});   
       $(".emblem3").css({"margin-top": ($(window).scrollTop()) + "px"});    
     }
 });
